@@ -9,10 +9,36 @@
                 width: 100px;
                 height: 100px;
                 background-color: brown;
+                position: absolute;
+            }
+            #box2 {
+                width: 100px;
+                height: 100px;
+                background-color: darkgreen;
+                top: 200px;
+                left: 200px;
+                position: absolute;
             }
         </style>
     </head>
     <body>
         <div id="box1"></div>
+        <div id="box2"></div>
+        <script type="text/javascript">
+            var box1 = document.getElementById("box1")
+            box1.onmousedown = function () {
+                document.onmousemove = function (event) {
+                    var x = event.clientX
+                    var y = event.clientY
+                    box1.style.left = x + "px"
+                    box1.style.top = y + "px"
+                }
+
+                document.onmouseup = function () {
+                    document.onmousemove = null
+                    document.onmouseup = null
+                }
+            }
+        </script>
     </body>
 </html>
