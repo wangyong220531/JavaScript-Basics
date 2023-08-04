@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn">按钮</button>
+        <script type="text/javascript">
+            window.onload = function () {
+                var btn = document.getElementById("btn")
+                // btn.onclick = function () {
+                //     console.log(1);
+                //     alert(1)
+                //     alert(2)
+                // }
+                // btn.onclick = function () {
+                //     console.log(2);
+                //     alert(2)
+                // }
+                btn.addEventListener(
+                    "click",
+                    () => {
+                        alert(1)
+                    },
+                    false
+                )
+                btn.addEventListener(
+                    "click",
+                    () => {
+                        alert(2)
+                    },
+                    false
+                )
+                btn.addEventListener(
+                    "click",
+                    () => {
+                        alert(3)
+                    },
+                    false
+                )
+                document.addEventListener(
+                    "click",
+                    () => {
+                        alert("页面被点击了！")
+                    },
+                    false
+                )
+
+                function bind(obj, eventStr, callback) {
+                    obj.addEventListener(eventStr, callback, false)
+                }
+
+                bind(btn, "click", function () {
+                    alert("我是bind")
+                })
+            }
+        </script>
+    </body>
+</html>

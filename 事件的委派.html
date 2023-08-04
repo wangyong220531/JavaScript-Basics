@@ -6,15 +6,37 @@
         <title>Document</title>
     </head>
     <body>
-        <ul>
+        <button id="btn">按钮</button>
+        <ul id="ul">
             <li>
                 <a href="javascriopt:;">超链接一</a>
+            </li>
+            <li>
                 <a href="javascriopt:;">超链接二</a>
+            </li>
+            <li>
                 <a href="javascriopt:;">超链接三</a>
             </li>
         </ul>
         <script type="text/javascript">
-            window.onload = function(){
+            window.onload = function () {
+                var ul = document.getElementById("ul")
+                ul.onclick = function(){
+                    alert("我被点击了~~~")
+                }
+                var btn = document.getElementById("btn")
+                btn.onclick = function () {
+                    var li = document.createElement("li")
+                    li.innerHTML = "<a href='javascriopt:;''>新建的超链接</a>"
+                    ul.appendChild(li)
+                }
+                var allA = document.getElementsByTagName("a")
+                console.log(allA)
+                for (var i = 0; i < allA.length; i++) {
+                    allA[i].onclick = function (event) {
+                        alert("我是a的单击响应函数！")
+                    }
+                }
             }
         </script>
     </body>
