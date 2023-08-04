@@ -5,19 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
             #box {
                 width: 100px;
                 height: 100px;
                 background-color: red;
                 position: absolute;
             }
+            #bigger-box {
+                width: 500px;
+                height: 500px;
+                background-color: aquamarine;
+            }
         </style>
     </head>
     <body style="height: 1600px">
+        <div id="bigger-box"></div>
         <div id="box"></div>
         <script type="text/javascript">
             window.onload = function () {
                 var box = document.getElementById("box")
+                var biggerBox = document.getElementById("bigger-box")
+                biggerBox.onmousemove = function (event) {
+                    event.cancelBubble = true
+                }
                 document.onmousemove = function (event) {
                     var st = document.documentElement.scrollTop
                     var left = event.pageX
