@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                background-color: #000;
+            }
+            #box1 {
+                width: 100px;
+                height: 100px;
+                background-color: #f70000;
+                position: absolute;
+            }
+            #box2 {
+                height: 1000px;
+                background-color: blue;
+                border-left: 1px solid #ffffff;
+                position: absolute;
+                left: 1000px;
+                top: 0;
+                bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn02">向左移动</button>
+        <button id="btn01">向右移动</button>
+        <button id="pause">暂停</button>
+        <br /><br />
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <script type="text/javascript">
+            window.onload = function () {
+                var btn1 = document.querySelector("#btn01")
+                var btn2 = document.querySelector("#btn02")
+                var pauseBtn = document.querySelector("#pause")
+                var box1 = document.querySelector("#box1")
+                var timer
+                function getStyle(obj, name) {
+                    return getComputedStyle(obj, null)[name]
+                }
+                btn1.onclick = function () {
+                    move(box1, 10)
+                }
+                btn2.onclick = function () {
+                    move(box1, -10)
+                }
+                function move(obj, speed) {
+                    clearInterval(timer)
+                    var oldTop = parseFloat(getStyle(obj, "top"))
+                    timer = setInterval(function () {
+                        var oldVal = parseFloat(getStyle(obj, "left"))
+                        var newVal = oldVal + speed
+                        if (newVal > 900) {
+                            newVal = 900
+                            return
+                        }
+                        if (newVal === 900) {
+                            clearInterval(timer)
+                            return
+                        }
+                        if (newVal < 0) {
+                            newVal = 0
+                            return
+                        }
+                        if (newVal === 0) {
+                            clearInterval(timer)
+                            return
+                        }
+                        obj.style.left = newVal + "px"
+                    }, 30)
+                }
+                pauseBtn.onclick = function () {
+                    clearInterval(timer)
+                }
+            }
+        </script>
+    </body>
+</html>
