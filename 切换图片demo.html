@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <img src="./imgs/Jokic.jpg" alt="" id="img1" />
+        <br />
+        <button id="start-btn">开始</button>
+        <button id="pause-btn">暂停</button>
+        <script type="text/javascript">
+            var imgArr = ["./imgs/Durant.jpg", "./imgs/Butler.jpg", "./imgs/Jokic.jpg"]
+            var img1 = document.getElementById("img1")
+            var index = -1
+            var startBtn = document.querySelector("#start-btn")
+            var timer
+            startBtn.onclick = function () {
+                clearInterval(timer)
+                timer = setInterval(function () {
+                    index++
+                    index %= imgArr.length
+                    img1.src = imgArr[index]
+                }, 500)
+            }
+            var pauseBtn = document.querySelector("#pause-btn")
+            pauseBtn.onclick = function () {
+                clearInterval(timer)
+            }
+        </script>
+    </body>
+</html>

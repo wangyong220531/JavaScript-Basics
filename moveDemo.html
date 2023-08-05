@@ -18,29 +18,40 @@
         <script type="text/javascript">
             window.onload = function () {
                 var box1 = document.getElementById("box1")
-                const observer = new ResizeObserver(callback)
-                observer.observe(box1)
-                function callback(e) {
-                    console.log(e)
-                }
-                // var speed = 20
-                // document.onkeydown = function (event) {
-                //     if (event.ctrlKey) speed = 50
-                //     switch (event.keyCode) {
-                //         case 37:
-                //             box1.style.left = box1.offsetLeft - speed + "px"
-                //             break
-                //         case 38:
-                //             box1.style.top = box1.offsetTop - speed + "px"
-                //             break
-                //         case 39:
-                //             box1.style.left = box1.offsetLeft + speed + "px"
-                //             break
-                //         case 40:
-                //             box1.style.top = box1.offsetTop + speed + "px"
-                //             break
-                //     }
+                // const observer = new ResizeObserver(callback)
+                // observer.observe(box1)
+                // function callback(e) {
+                //     console.log(e)
                 // }
+                var dir = 3
+                var speed = 20
+                document.onkeydown = function (event) {
+                    dir = event.keyCode
+                    if (event.ctrlKey) {
+                        speed += 50
+                        return
+                    }
+                    speed = 20
+                }
+                document.onkeyup = function (event) {
+                    dir = 0
+                }
+                setInterval(function () {
+                    switch (dir) {
+                        case 37:
+                            box1.style.left = box1.offsetLeft - speed + "px"
+                            break
+                        case 38:
+                            box1.style.top = box1.offsetTop - speed + "px"
+                            break
+                        case 39:
+                            box1.style.left = box1.offsetLeft + speed + "px"
+                            break
+                        case 40:
+                            box1.style.top = box1.offsetTop + speed + "px"
+                            break
+                    }
+                }, 30)
             }
         </script>
     </body>
