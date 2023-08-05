@@ -7,10 +7,16 @@
     </head>
     <body>
         <button>按钮</button>
+        <input type="text">
         <script type="text/javascript">
             var btn = document.querySelector("button")
             btn.onclick = function () {
-                console.log(location)
+                // console.log(location);
+                // location = "https://baidu.com"
+                // location = "test0.html"
+                // location.assign("https://baidu.com")
+                // location.reload(true)
+                location.replace("test0.html")
             }
         </script>
     </body>
