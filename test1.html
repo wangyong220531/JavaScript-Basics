@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>test1</h1>
+        <button>点我一下</button>
+        <a href="test2.html">前进一页</a>
+        <script type="text/javascript">
+            var btn = document.querySelector("button")
+            btn.onclick = function () {
+                console.log(history)
+                alert(history.length)
+                history.back()
+            }
+        </script>
+    </body>
+</html>
