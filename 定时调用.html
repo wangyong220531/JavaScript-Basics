@@ -10,10 +10,18 @@
         <script type="text/javascript">
             window.onload = function () {
                 var h1 = document.querySelector("h1")
-                for (var i = 0; i < 100000; i++) {
-                    h1.innerHTML = i
-                    alert("hello")
-                }
+                // for (var i = 0; i < 100000; i++) {
+                //     h1.innerHTML = i
+                //     alert("hello")
+                // }
+                var num = 1
+                var timer = setInterval(function () {
+                    h1.innerHTML = num++
+                    if (num === 11) {
+                        clearInterval(timer)
+                    }
+                }, 1000)
+                // clearInterval(timer)
             }
         </script>
     </body>
