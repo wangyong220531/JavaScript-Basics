@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var obj = '{"name": "AK-103","role": "warrior","age": 23,"gender": "male"}'
+            // console.log(typeof obj)
+            // console.log(JSON);
+            var arr = '[1,2,3,"AK-103","warrior"]'
+            // var result = JSON.parse(obj)
+            // console.log(result.role)
+            // console.log(JSON.parse(arr)[3])
+            // console.log(JSON.parse(obj));
+            // console.log(JSON.stringify(obj))
+            // var str = 'alert("Jamal Murray")'
+            // console.log(eval('{"name": "AK-103","role": "warrior","age": 23,"gender": "male"}'))
+            // console.log(eval("(" + str + ")"))
+            let y = "global"
+            eval('let y = "local"')
+            console.log(y) // global
+        </script>
+    </body>
+</html>
