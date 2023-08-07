@@ -57,9 +57,9 @@
                 <li><img src="./imgs/Jokic.jpg" alt="" /></li>
             </ul>
             <div id="nav-dots">
-                <a href=""></a>
-                <a href=""></a>
-                <a href=""></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
             </div>
         </div>
         <script type="text/javascript">
@@ -74,7 +74,18 @@
                     allA[i].no = i
                     allA[i].onclick = function () {
                         index = this.no
+                        ul.style.left = -520 * index + "px"
+                        setA()
                     }
+                }
+                function setA() {
+                    for (var i = 0; i < imgList.length; i++) {
+                        allA[i].style.backgroundColor = ""
+                    }
+                    allA[index].style.backgroundColor = "aqua"
+                }
+                function autoSwitch() {
+                    setInterval(function () {}, 3000)
                 }
             }
         </script>

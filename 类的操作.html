@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .box1 {
+                width: 120px;
+                height: 120px;
+                background-color: blue;
+            }
+            .new-box1 {
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box1" class="box1"></div>
+        <button id="btn1">点击修改box1的样式</button>
+        <script type="text/javascript">
+            window.onload = function () {
+                var btn1 = document.querySelector("#btn1")
+                var box1 = document.querySelector("#box1")
+                btn1.onclick = function () {
+                    // box1.style.width = "200px"
+                    // box1.style.height = "300px"
+                    // box1.style.backgroundColor = "skyblue"
+                    // box1.className = "new-box1"
+                    // addClassName(box1, "new-box1")
+                    toggleClassName(box1, "new-box1")
+                }
+                function addClassName(obj, cn) {
+                    if (!hasClassName(obj, cn)) {
+                        obj.className += " " + cn
+                        return
+                    }
+                    return
+                }
+                function hasClassName(obj, cn) {
+                    const reg = new RegExp("\\b" + cn + "\\b")
+                    return reg.test(obj.className)
+                }
+                function removeClassName(obj, cn) {
+                    const reg = new RegExp("\\b" + cn + "\\b")
+                    obj.className = obj.className.replace(reg, "")
+                }
+                function toggleClassName(obj, cn) {
+                    if (hasClassName(obj, cn)) {
+                        removeClassName(obj, cn)
+                    } else {
+                        addClassName(obj, cn)
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
