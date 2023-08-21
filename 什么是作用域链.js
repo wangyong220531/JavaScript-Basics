@@ -1,16 +1,2 @@
+// 作用域链（Scope Chain）是用于确定变量和函数的可访问性的一个概念
 
-function foo() {
-
-    console.log('foo1');
-
-}
-
-foo();  // foo2
-
-function foo() {
-
-    console.log('foo2');
-
-}
-
-foo(); // foo2
