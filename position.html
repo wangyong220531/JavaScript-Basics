@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 
+               position是CSS中的一个属性，用于指定一个元素在文档中的定位方式，从而调整元素的布局方式
+               该属性的选项包括：
+               （1）static：默认值。表示元素没有定位，出现在正常的文档流中
+               （2）relative：生成相对定位，元素相对于其在正常文档流中的位置进行定位
+               （3）absolute：生成绝对定位，元素相对于static定位以外的的第一个父元素的位置进行定位
+               （4）fixed：生成固定定位：元素相对于浏览器窗口进行定位，其位置不会因为滚动条的移动而改变
+             */
+            #box {
+                width: 100px;
+                height: 100px;
+                background-color: #f74a4a;
+                position: fixed;
+                top: 30px;
+                left: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+    </body>
 </html>

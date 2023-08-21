@@ -9,7 +9,7 @@ Animal.prototype.eat = function () {
     console.log(`${this.name} is eating`)
 }
 
-function Dog(name) {
+function Dog(name) { 
     this.name = name
 }
 
