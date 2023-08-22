@@ -5,5 +5,6 @@ function Person(name) {
 }
 
 const p = new Person("AK-103")
+console.log(p);
 
 console.log(p.__proto__ === Person.prototype) // true
