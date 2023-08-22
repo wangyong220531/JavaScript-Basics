@@ -1,0 +1,1 @@
+// 实现了JavaScript对象的属性或方法的继承和JavaScript的属性或方法的查找机制
